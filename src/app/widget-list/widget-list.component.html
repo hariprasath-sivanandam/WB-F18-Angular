@@ -1,3 +1,13 @@
-<p>
-  widget-list works!
-</p>
+<div class="row">
+  <div class="col-4">
+    <ul class="list-group">
+      <li class="list-group-item active">Widgets</li>
+      <li *ngFor="let widget of widgets"
+          class="list-group-item wbdv">
+          {{widget.title}}
+      </li>
+    </ul>
+  </div>
+  <div class="col-8">
+  </div>
+</div>

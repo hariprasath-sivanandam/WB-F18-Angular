@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {LessonServiceClient} from '../services/lesson.service.client';
 
 @Component({
   selector: 'app-lesson-tabs',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LessonTabsComponent implements OnInit {
 
-  constructor() { }
+  moduleId;
+  courseId;
+  lessons = [];
 
-  ngOnInit() {
+  constructor(private lessonService: LessonServiceClient, private route: ActivatedRoute) {
+    this.route.params.subscribe(params => this.setParams(params));
   }
 
+  setParams(params) {
+    this.moduleId = params['mid'];
+    this.courseId = params['cid'];
+
+  }
+
+  ngOnInit() {
+    console.log(this.moduleId)
+    this.lessons = this.lessonService.findLessonsForModule(this.moduleId);
+    console.log('test');
+    console.log(this.lessons);
+  }
 }
