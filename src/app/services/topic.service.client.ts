@@ -7,6 +7,9 @@ export class TopicServiceClient {
   topics = [{id: 1, title: 'Topic 1'}, {id: 2, title: 'Topic 2'}, {id: 3, title: 'Topic 3'}];
 
   findTopicsForLesson(lessonId) {
+    if (lessonId === undefined) {
+          return [];
+    }
     const l = ' - Lesson ' + lessonId;
     this.topics = [{id: 1, title: 'Topic 1' + l}, {id: 2, title: 'Topic 2' + l}, {id: 3, title: 'Topic 3' + l}];
     return this.topics;

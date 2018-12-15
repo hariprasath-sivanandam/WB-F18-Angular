@@ -1,10 +1,13 @@
-<ul class="nav nav-tabs">
-  <li *ngFor="let lesson of lessons"
-      class="nav-item">
-    <a class="nav-link"
-       [ngClass]="{'active': lesson.id == lessonId}"
-       routerLink="/course/{{courseId}}/module/{{moduleId}}/lesson/{{lesson.id}}/topic">
-      {{lesson.title}}
-    </a>
-  </li>
-</ul>
+<div *ngIf = "lessons.length>0">
+  <ul class="nav nav-tabs">
+    <li *ngFor="let lesson of lessons"
+        class="nav-item">
+      <a class="nav-link"
+         [ngClass]="{'active': lesson.id == lessonId}"
+         routerLink="/course/{{courseId}}/module/{{moduleId}}/lesson/{{lesson.id}}/topic">
+        {{lesson.title}}
+      </a>
+    </li>
+  </ul>
+  <app-topic-pills></app-topic-pills>
+</div>

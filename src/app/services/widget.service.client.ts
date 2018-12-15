@@ -8,6 +8,9 @@ export class WidgetServiceClient {
   widgets = [{id: 1, title: 'Widget 1'}, {id: 2, title: 'Widget 2'}, {id: 3, title: 'Widget 3'}];
 
   findWidgetsForTopic(topicId) {
+      if (topicId === undefined) {
+          return [];
+      }
     const t = ' - Topic ' + topicId;
     this.widgets = [{id: 1, title: 'Widget 1' + t}, {id: 2, title: 'Widget 2' + t}, {id: 3, title: 'Widget 3' + t}];
     return this.widgets;

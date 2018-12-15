@@ -7,10 +7,10 @@ import {WidgetListComponent} from './widget-list/widget-list.component';
 const appRoutes: Routes = [
   {path: '', redirectTo: 'course', pathMatch: 'full'},
   {path: 'course', component: CourseGridComponent},
-  {path: 'course/:cid/module', component: ModuleListComponent},
-  {path: 'course/:cid/module/:mid/lesson', component: LessonTabsComponent},
-  {path: 'course/:cid/module/:mid/lesson/:lid/topic', component: TopicPillsComponent},
-  {path: 'course/:cid/module/:mid/lesson/:lid/topic/:tid/widget', component: WidgetListComponent},
+  {path: 'course/:cid/module', component: CourseGridComponent},
+  {path: 'course/:cid/module/:mid/lesson', component: CourseGridComponent},
+  {path: 'course/:cid/module/:mid/lesson/:lid/topic', component: CourseGridComponent},
+  {path: 'course/:cid/module/:mid/lesson/:lid/topic/:tid/widget', component: CourseGridComponent},
   {path: '**', component: CourseGridComponent}
 ];
 export const routing = RouterModule.forRoot(appRoutes);

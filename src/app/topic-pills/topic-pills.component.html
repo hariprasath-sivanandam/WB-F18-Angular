@@ -1,4 +1,5 @@
-<div class="rows">
+<div *ngIf = "topics.length>0">
+  <div class="rows">
   <ul class="nav nav-pills">
     <li *ngFor="let topic of topics"
         class="nav-item">
@@ -8,4 +9,7 @@
       </a>
     </li>
   </ul>
+  <app-widget-list>
+  </app-widget-list>
+  </div>
 </div>

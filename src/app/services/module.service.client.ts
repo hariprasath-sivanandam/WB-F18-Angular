@@ -6,6 +6,9 @@ export class ModuleServiceClient {
   modules = [{id: 1, title: 'Mod 1'}, {id: 2, title: 'Mod 2'}, {id: 3, title: 'Mod 3'}];
 
   findModulesForCourse(courseId) {
+      if (courseId === undefined) {
+          return [];
+      }
     const c = ' - course ' + courseId;
     this.modules = [{id: 1, title: 'Mod 1' + c }, {id: 2, title: 'Mod 2' + c }, {id: 3, title: 'Mod 3' + c }];
     return this.modules;

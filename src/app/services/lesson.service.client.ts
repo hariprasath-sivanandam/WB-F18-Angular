@@ -6,6 +6,9 @@ export class LessonServiceClient {
   lessons = [{id: 1, title: 'Lesson 1'}, {id: 2, title: 'Lesson 2'}, {id: 3, title: 'Lesson 3'}];
 
   findLessonsForModule(moduleId) {
+    if (moduleId === undefined) {
+        return [];
+    }
     const m = ' - Module ' + moduleId;
     this.lessons = [{id: 1, title: 'Lesson 1' + m }, {id: 2, title: 'Lesson 2' + m }, {id: 3, title: 'Lesson 3' + m }];
     return this.lessons;
